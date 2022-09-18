@@ -1,4 +1,5 @@
 local library = {
+	Version = "Beta",
 	WorkspaceName = "LouisVutton Lib",
 	flags = {},
 	signals = {},
