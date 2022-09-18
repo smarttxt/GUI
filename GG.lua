@@ -1,5 +1,4 @@
 local library = {
-	Version = "0.35",
 	WorkspaceName = "LouisVutton Lib",
 	flags = {},
 	signals = {},
@@ -6682,10 +6681,6 @@ function library:CreateWindow(options, ...)
 		local detailssection = designer:CreateSection({
 			Name = "More Info"
 		})
-		local filessection = designer:CreateSection({
-			Name = "Profiles",
-			Side = "right"
-		})
 		local settingssection = designer:CreateSection({
 			Name = "Settings",
 			Side = "right"
@@ -6743,20 +6738,6 @@ function library:CreateWindow(options, ...)
 			Flag = "__Designer.Background.UseBackgroundImage",
 			Value = true,
 			Callback = updatecolorsnotween
-		}}, {"AddPersistence", "__Designer.Persistence.ThemeFile", filessection, {
-			Name = "Theme Profile",
-			Flag = "__Designer.Files.ThemeFile",
-			Workspace = "Pepsi Lib Themes",
-			Flags = flags,
-			Suffix = "Theme",
-			Desginer = true
-		}}, {"AddTextbox", "__Designer.Textbox.WorkspaceName", filessection, {
-			Name = "Workspace Name",
-			Value = library.WorkspaceName or "Unnamed Workspace",
-			Flag = "__Designer.Files.WorkspaceFile",
-			Callback = function(n, o)
-				persistoptions.Workspace = n or o
-			end
 		}}, {"AddPersistence", "__Designer.Persistence.WorkspaceProfile", filessection, persistoptions}, {"AddButton", "__Designer.Button.TerminateGUI", settingssection, {{
 			Name = "Terminate GUI",
 			Callback = library.unload
@@ -6840,7 +6821,7 @@ function library:CreateWindow(options, ...)
 		end
 		if options.Credit ~= false then
 			daaata[1 + #daaata] = {"AddLabel", "__Designer.Label.Creator", detailssection, {
-				Text = "Library by Pepsi#5229 "
+				Text = "Library by Lemon#2833"
 			}}
 		elseif "Gee, thanks for your support." then
 		end
